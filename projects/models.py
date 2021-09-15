@@ -12,5 +12,8 @@ class Project(models.Model):
     #assign a team of users to this project
     team = models.ForeignKey(Team, on_delete=models.CASCADE, blank=True, null=True)
 
+    #add tickets to project
+    tickets = models.ForeignKey('tickets.Ticket', related_name='tickets', on_delete=models.CASCADE, blank=True, null=True)
+
     def __str__(self):
         return self.title
