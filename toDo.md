@@ -19,3 +19,7 @@
     * Change team banner
     * Edit team description
     * Assign/Add/Remove team roles to users
+
+**Ticket Forms**
+* Edit Ticket Form
+    * update assigned_to field to only show users that are a part of the team of that project
