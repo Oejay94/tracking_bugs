@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bug_tracker_users',
     'projects',
+    'teams',
     'tickets',
     'config'
 ]

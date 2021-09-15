@@ -27,7 +27,11 @@ class BugTrackingUser(AbstractUser):
         (UX_DESIGNER, 'UX Designer')
     ]
 
+    #list of roles on a team. This is for the user profile page. It does not impact the team model.
     role = models.CharField(max_length=6, choices=TEAM_ROLE_CHOICES)
+
+    #text field for the user to give a little insight about themself
+    bio = models.TextField(blank=True, null=True)
     
     def __str__(self):
         return self.username
