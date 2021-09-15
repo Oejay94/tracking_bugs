@@ -5,12 +5,12 @@ from .models import Ticket
 from .forms import TicketForm, UpdateTicketForm, CompleteTicketForm
 
 class CreateTicketPage(View):
-    def get(request):
-        html = 'creat_ticket.html'
+    def get(self, request):
+        html = 'create_ticket.html'
         form = TicketForm()
         return render(request, html, {'form':form})
     
-    def post(request):
+    def post(self, request):
         form = TicketForm(request.POST)
 
         if form.is_valid():
@@ -24,12 +24,12 @@ class CreateTicketPage(View):
 
 
 class UpdateTicketPage(View):
-    def get(request):
+    def get(self, request):
         html = 'update_ticket.html'
         form = UpdateTicketForm()
         return render(request, html, {'form':form})
     
-    def post(request, ticket_id):
+    def post(self, request, ticket_id):
         form = UpdateTicketForm(request.POST)
 
         if form.is_valid():
@@ -44,12 +44,12 @@ class UpdateTicketPage(View):
 
 
 class CompleteTicketPage(View):
-    def get(request):
+    def get(self, request):
         html = 'complete_ticket.html'
         form = CompleteTicketForm()
         return render(request, html, {'form':form})
     
-    def post(request, ticket_id):
+    def post(self, request, ticket_id):
         form = CompleteTicketForm(request.POST)
 
         if form.is_valid():
