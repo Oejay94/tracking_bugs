@@ -45,7 +45,7 @@ class LoginPage(View):
             )
             if user is not None:
                 login(request, user)
-                return HttpResponseRedirect(reverse('user_page'))
+                return HttpResponseRedirect(reverse('team_page'))
 
 
 def logout_button(request):
