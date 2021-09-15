@@ -25,7 +25,7 @@ class CreateAccountPage(View):
                 role=data['role']
             )
             login(request, new_user)
-            return HttpResponseRedirect(reverse('user_page'))
+            return HttpResponseRedirect(reverse('team_page'))
     
 
 class LoginPage(View):

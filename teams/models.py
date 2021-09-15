@@ -21,5 +21,7 @@ class Team(models.Model):
     uI_designer = models.ForeignKey(BugTrackingUser, on_delete=models.CASCADE, related_name='ui_designer', blank=True, null=True)
     uX_Designer = models.ForeignKey(BugTrackingUser, on_delete=models.CASCADE, related_name='ux_designer', blank=True, null=True)
 
+    #Conne
+
     def __str__(self):
         return self.team_name

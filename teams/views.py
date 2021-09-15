@@ -9,7 +9,7 @@ from .forms import TeamForm
 
 class CreateTeamPage(View):
     def get(self, request):
-        html = 'teams/create_team.html'
+        html = 'create_team.html'
         form = TeamForm()
         return render(request, html, {'form':form})
     
@@ -36,7 +36,7 @@ class CreateTeamPage(View):
 
 
 def edit_team_details(request, id):
-    html = 'teams/edit_team_details.html'
+    html = 'edit_team_details.html'
     team = get_object_or_404(Team, id)
 
     if request.method == 'POST':
@@ -51,7 +51,7 @@ def edit_team_details(request, id):
 
 
 def team_page(request, team_id):
-    html = 'teams/team_page.html'
+    html = 'team_page.html'
     team = Team.objects.get(id=team_id)
     projects = Project.objects.filter(team=team)
     return render(request, html, {'team':team, 'projects':projects})
