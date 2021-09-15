@@ -1,0 +1,13 @@
+<h1>{{project.title}}</h1>
+<p>{{project.description}}</p>
+
+{% for ticket in tickets %}
+<ul>
+    <li><a href="/ticket/{{ticket.id}}/">{{ticket.title}}</a></li>
+    <ul>
+        <li>{{ticket.status}}</li>
+        <li>{{ticket.date_created}}</li>
+        <li>{{ticket.created_by}}</li>
+    </ul>
+</ul>
+{% endfor %}

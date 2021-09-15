@@ -9,7 +9,7 @@ from tickets.models import Ticket
 
 class ProjectFormPage(View):
     def get(self, request):
-        html = 'projects/create_projects.html'
+        html = 'create_projects.html'
         form = ProjectForm()
         return render(request, html, {'form':form})
     
@@ -26,7 +26,7 @@ class ProjectFormPage(View):
 
 
 def edit_project_details(request, id):
-    html = 'projects/edit_project_details.html'
+    html = 'edit_project_details.html'
     project = get_object_or_404(Project, id)
 
     if request.method == 'POST':
@@ -40,7 +40,7 @@ def edit_project_details(request, id):
     return render(request, html, {'form':form})
 
 def project_page(request, project_id):
-    html = 'projects/project_page.html'
+    html = 'project_page.html'
     project = Project.objects.get(id=project_id)
     tickets = Ticket.objects.filter(project=project)
     return render(request, html, {'project':project, 'tickets':tickets})
