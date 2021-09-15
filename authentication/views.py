@@ -51,3 +51,7 @@ class LoginPage(View):
 def logout_button(request):
     logout(request)
     return HttpResponseRedirect(request.GET.get('next', '/login/'))
+
+def first_page(request):
+    html = 'index.html'
+    return render(request, html)
