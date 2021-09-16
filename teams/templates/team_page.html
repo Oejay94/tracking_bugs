@@ -1,8 +1,8 @@
 <h1>{{team.team_name}}</h1>
 <p>{{team.team_bio}}</p>
-
+<button><a href="/auth/logout/">Logout</a></button>
 {% for project in projects %}
 <ul>
-    <li><a href="/project/{{project.id}}/"></a>{{project.title}}</li>
+    <li><a href="/project/{{project.id}}/">{{project.title}}</a></li>
 </ul>
 {% endfor %}

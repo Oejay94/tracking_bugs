@@ -50,7 +50,7 @@ class LoginPage(View):
 
 def logout_button(request):
     logout(request)
-    return HttpResponseRedirect(request.GET.get('next', '/login/'))
+    return HttpResponseRedirect(request.GET.get('next', '/'))
 
 def first_page(request):
     html = 'index.html'
